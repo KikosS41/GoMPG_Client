@@ -1,19 +1,19 @@
 package fr.object;
 
-import fr.entity.Entity;
 import fr.gompg.GamePanel;
 
-import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 
-public class OBJ_Key extends Entity {
-
-    public BufferedImage image;
-    GamePanel gamePanel;
-	
-	public OBJ_Key(GamePanel gamePanel) {
-		super(gamePanel);
-
-		name = "Key";
-		down1= setup("/objects/key", gamePanel.tileSize, gamePanel.tileSize);
+public class OBJ_Key extends SuperObject {
+	public OBJ_Key(GamePanel _gamePanel) {
+		name = "key";
+		gamePanel = _gamePanel;
+		try {
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/key.png"));
+			uTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
+

@@ -4,26 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a385655a-e048-4282-9bd9-0df684a53af7" name="Changes" comment="[INIT]">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/entity/NPC_OldMan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/enums/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/enums/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/gompg/AssetSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/gompg/Sound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/monster/MON_GreenSlime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Boots.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Chest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Door.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Heart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Key.java" afterDir="false" />
+    <list default="true" id="a385655a-e048-4282-9bd9-0df684a53af7" name="Changes" comment="Adapted project to maven struture">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/enums/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/multi/Multi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/object/SuperObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/gompg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/gompg/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/entity/NPC_OldMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/entity/NPC_OldMan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/enums/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/enums/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/enums/Type.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/gompg/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/gompg/AssetSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/gompg/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/gompg/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/monster/MON_GreenSlime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Boots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Chest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Heart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/object/OBJ_Key.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,6 +80,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Killian/git/2D_Game&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -116,6 +128,13 @@
       <workItem from="1673116617778" duration="225000" />
       <workItem from="1673117181827" duration="4809000" />
       <workItem from="1673122443048" duration="119000" />
+      <workItem from="1673122581618" duration="58000" />
+      <workItem from="1673126873738" duration="1773000" />
+      <workItem from="1673129132413" duration="4000" />
+      <workItem from="1673129255082" duration="13000" />
+      <workItem from="1673129339924" duration="28000" />
+      <workItem from="1673129748019" duration="85000" />
+      <workItem from="1673130085823" duration="2934000" />
     </task>
     <task id="LOCAL-00001" summary="[INIT]">
       <created>1673116732817</created>
@@ -124,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673116732817</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adapted project to maven struture">
+      <created>1673122631430</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673122631430</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +169,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[INIT]" />
-    <option name="LAST_COMMIT_MESSAGE" value="[INIT]" />
+    <MESSAGE value="Adapted project to maven struture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted project to maven struture" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

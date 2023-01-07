@@ -1,15 +1,18 @@
 package fr.object;
 
-import fr.entity.Entity;
 import fr.gompg.GamePanel;
 
-public class OBJ_Chest extends Entity {
-	
-	GamePanel gamePanel;
-	public OBJ_Chest(GamePanel gamePanel) {
-		super(gamePanel);
-		
-		name = "Chest";
-		down1 = setup("/objects/chest", gamePanel.tileSize, gamePanel.tileSize);
+import javax.imageio.ImageIO;
+
+public class OBJ_Chest extends SuperObject {
+	public OBJ_Chest(GamePanel _gamePanel) {
+		name = "chest";
+		gamePanel = _gamePanel;
+		try {
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/chest.png"));
+			uTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
