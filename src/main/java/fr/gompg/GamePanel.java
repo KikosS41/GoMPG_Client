@@ -4,21 +4,18 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import javax.swing.JPanel;
 
 import fr.entity.Entity;
 import fr.entity.Player;
 import fr.enums.GameState;
+import fr.multi.JsonParser;
 import fr.multi.Multi;
 import fr.object.SuperObject;
 import fr.tile.Map;
-
+import org.json.simple.parser.JSONParser;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -52,9 +49,9 @@ public class GamePanel extends JPanel implements Runnable{
 	Thread gameThread;
 
 	//ENTITY AND OBJET
-	public Player player = new Player(this, keyHandler);
-	public SuperObject obj[] = new SuperObject[10];
-	public Entity npc[] = new Entity[10];
+	public Player player = new Player(this, keyHandler, "Killian");
+	public SuperObject[] obj = new SuperObject[10];
+	public Entity[] npc = new Entity[10];
 
 	//GAME STATE
 	public GameState gameState;
@@ -88,8 +85,9 @@ public class GamePanel extends JPanel implements Runnable{
 		long lastTime = System.nanoTime();
 		long currentTime;
 		Multi multi = new Multi();
+		JsonParser jsonParser = new JsonParser();
 		try {
-			multi.connect("{\"name\":\"Charlotte\", \"coordinate\":{ \"x\":15, \"y\":84, \"z\":77 }, \"attack-damage\":25, \"health\":75 }");
+			multi.connect(jsonParser.getPlayerData(this.player));
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -100,6 +98,11 @@ public class GamePanel extends JPanel implements Runnable{
 			lastTime = currentTime;
 
 			if(delta >= 1) {
+				try {
+					multi.updateServer(jsonParser.getPlayerData(player));
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
 				update();
 				repaint();
 				delta--;

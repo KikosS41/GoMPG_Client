@@ -12,12 +12,13 @@ import fr.gompg.GamePanel;
 public class Player extends Entity{
 	KeyHandler keyHandler;
 
+	public final String name;
 	public final int screenX;
 	public final int screenY;
 
-	public Player(GamePanel gp, KeyHandler keyH) {
+	public Player(GamePanel gp, KeyHandler keyH,String name) {
 		super(gp);
-
+		this.name = name;
 		this.keyHandler = keyH;
 
 		screenX = gamePanel.screenWidth/2 - gamePanel.tileSize/2;

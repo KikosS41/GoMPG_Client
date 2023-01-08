@@ -19,4 +19,22 @@ public class Multi {
 
         }
     }
+    public void updateServer(String json) throws IOException {
+        try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()){
+            HttpPost postRequest = new HttpPost("http://localhost:8080/update");
+            StringEntity body = new StringEntity(json);
+            postRequest.setEntity(body);
+            CloseableHttpResponse response = httpClient.execute(postRequest);
+
+        }
+    }
+    public void disconnect(String json) throws IOException {
+        try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()){
+            HttpPost postRequest = new HttpPost("http://localhost:8080/disconnect");
+            StringEntity body = new StringEntity(json);
+            postRequest.setEntity(body);
+            CloseableHttpResponse response = httpClient.execute(postRequest);
+
+        }
+    }
 }
