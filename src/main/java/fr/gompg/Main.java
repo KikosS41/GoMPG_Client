@@ -42,6 +42,6 @@ public class Main {
     public static void close(GamePanel gamePanel) throws IOException {
         Multi multi= new Multi();
         JsonParser jsonParser = new JsonParser();
-        multi.disconnect(jsonParser.getPlayerData(gamePanel.player));
+        multi.disconnect(jsonParser.generatePlayerData(gamePanel.player));
     }
 }

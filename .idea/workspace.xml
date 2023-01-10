@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a385655a-e048-4282-9bd9-0df684a53af7" name="Changes" comment="pushing resources">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/multi/JsonParser.java" afterDir="false" />
+    <list default="true" id="a385655a-e048-4282-9bd9-0df684a53af7" name="Changes" comment="Adding update request, now player send his status 60 times per secondes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/gompg/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/gompg/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/gompg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/gompg/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/multi/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/multi/JsonParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/multi/Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/multi/Multi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +123,8 @@
       <workItem from="1673129339924" duration="28000" />
       <workItem from="1673129748019" duration="85000" />
       <workItem from="1673130085823" duration="3203000" />
-      <workItem from="1673201410676" duration="3825000" />
+      <workItem from="1673201410676" duration="3960000" />
+      <workItem from="1673377694413" duration="6373000" />
     </task>
     <task id="LOCAL-00001" summary="[INIT]">
       <created>1673116732817</created>
@@ -154,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673133279518</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adding update request, now player send his status 60 times per secondes">
+      <created>1673205418531</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673205418531</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,9 +183,21 @@
     <MESSAGE value="Adapted project to maven struture" />
     <MESSAGE value="converted from eclipse to intellij and add connect request" />
     <MESSAGE value="pushing resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing resources" />
+    <MESSAGE value="Adding update request, now player send his status 60 times per secondes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding update request, now player send his status 60 times per secondes" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/multi/JsonParser.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

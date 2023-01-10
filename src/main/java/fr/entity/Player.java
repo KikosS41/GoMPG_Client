@@ -16,6 +16,22 @@ public class Player extends Entity{
 	public final int screenX;
 	public final int screenY;
 
+	public Player(GamePanel gp, String name, int worldX, int worldY) {
+		super(gp);
+		this.name = name;
+		this.keyHandler = null;
+		this.screenX = 0;
+		this.screenY = 0;
+		this.worldX = worldX;
+		this.worldY = worldY;
+
+		solidArea = new Rectangle(8, 12, 28, 28);
+		solidAreaDefaultX = solidArea.x;
+		solidAreaDefaultY = solidArea.y;
+
+		setDefaultValues();
+		getPlayerImage();
+	}
 	public Player(GamePanel gp, KeyHandler keyH,String name) {
 		super(gp);
 		this.name = name;
@@ -106,6 +122,12 @@ public class Player extends Entity{
 			}
 		}
 
+	}
+
+	public void updateOther(Player[] otherPlayer){
+		for (Player player : otherPlayer){
+
+		}
 	}
 
 	public void pickUpObject(int index) {

@@ -16,6 +16,7 @@ import fr.multi.Multi;
 import fr.object.SuperObject;
 import fr.tile.Map;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -52,6 +53,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public Player player = new Player(this, keyHandler, "Killian");
 	public SuperObject[] obj = new SuperObject[10];
 	public Entity[] npc = new Entity[10];
+	public Player[] otherPlayer = new Player[10];
 
 	//GAME STATE
 	public GameState gameState;
@@ -87,7 +89,7 @@ public class GamePanel extends JPanel implements Runnable{
 		Multi multi = new Multi();
 		JsonParser jsonParser = new JsonParser();
 		try {
-			multi.connect(jsonParser.getPlayerData(this.player));
+			multi.connect(jsonParser.generatePlayerData(this.player));
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -99,8 +101,8 @@ public class GamePanel extends JPanel implements Runnable{
 
 			if(delta >= 1) {
 				try {
-					multi.updateServer(jsonParser.getPlayerData(player));
-				} catch (IOException e) {
+					otherPlayer =  multi.updateServer(this,jsonParser.generatePlayerData(player),otherPlayer);
+				} catch (IOException | ParseException e) {
 					throw new RuntimeException(e);
 				}
 				update();
