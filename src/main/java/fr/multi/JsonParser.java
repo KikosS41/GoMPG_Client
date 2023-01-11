@@ -1,12 +1,15 @@
 package fr.multi;
 
+import fr.entity.OtherPlayer;
 import fr.entity.Player;
 import fr.gompg.GamePanel;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,21 +33,20 @@ public class JsonParser {
         return jo.toString();
     }
 
-    public Player[] getServerData(GamePanel gamePanel, String inputData) throws ParseException {
-        Object obj = new JSONParser().parse(inputData);
-        JSONObject jo = (JSONObject) obj;
-        JSONArray ja = jo.getJSONArray("players");
-        List<Player> otherPlayer = null;
+    public List<OtherPlayer> getServerData(GamePanel gamePanel, String inputData) throws ParseException {
+        org.json.JSONObject jo = new org.json.JSONObject(inputData);
+        org.json.JSONArray ja = jo.getJSONArray("players");
+        List<OtherPlayer> allOtherPlayer = new ArrayList<OtherPlayer>();
         int i;
         for (i=0;i<ja.length();i++){
-            obj = ja.get(i);
-            jo = (JSONObject) obj;
-            Object coordinate = new JSONParser().parse((String) jo.get("coordinate"));
+            jo = (org.json.JSONObject) ja.get(i);
+            Object coordinate = new JSONParser().parse(jo.get("coordinate").toString());
             JSONObject coordinateJson = (JSONObject) coordinate;
-            otherPlayer.add(new Player(gamePanel, (String) jo.get("name"), (Integer) coordinateJson.get("x"),(Integer) coordinateJson.get("y")));
+            if (!jo.get("name").toString().equals(gamePanel.player.name)){
+                allOtherPlayer.add(new OtherPlayer(gamePanel, jo.get("name").toString(), Integer.parseInt(coordinateJson.get("x").toString()),Integer.parseInt(coordinateJson.get("y").toString())));
+            }
         }
 
-        Player[] players= otherPlayer.toArray(new Player[0]);
-        return players;
+        return allOtherPlayer;
     }
 }

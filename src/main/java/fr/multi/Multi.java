@@ -1,6 +1,6 @@
 package fr.multi;
 
-import fr.entity.Entity;
+import fr.entity.OtherPlayer;
 import fr.entity.Player;
 import fr.gompg.GamePanel;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -12,6 +12,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class Multi {
@@ -24,7 +25,7 @@ public class Multi {
 
         }
     }
-    public Player[] updateServer(GamePanel gamePanel, String json, Player[] otherPlayer) throws IOException, ParseException {
+    public List<OtherPlayer> updateServer(GamePanel gamePanel, String json, List<OtherPlayer> otherPlayer) throws IOException, ParseException {
         String response;
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()){
             HttpPost postRequest = new HttpPost("http://localhost:8080/update");

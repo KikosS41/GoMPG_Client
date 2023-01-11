@@ -5,10 +5,13 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 
 import fr.entity.Entity;
+import fr.entity.OtherPlayer;
 import fr.entity.Player;
 import fr.enums.GameState;
 import fr.multi.JsonParser;
@@ -53,7 +56,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public Player player = new Player(this, keyHandler, "Killian");
 	public SuperObject[] obj = new SuperObject[10];
 	public Entity[] npc = new Entity[10];
-	public Player[] otherPlayer = new Player[10];
+	public List<OtherPlayer> allOtherPlayer = new ArrayList<OtherPlayer>();
 
 	//GAME STATE
 	public GameState gameState;
@@ -101,7 +104,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 			if(delta >= 1) {
 				try {
-					otherPlayer =  multi.updateServer(this,jsonParser.generatePlayerData(player),otherPlayer);
+					allOtherPlayer =  multi.updateServer(this,jsonParser.generatePlayerData(player),allOtherPlayer);
 				} catch (IOException | ParseException e) {
 					throw new RuntimeException(e);
 				}
@@ -156,7 +159,16 @@ public class GamePanel extends JPanel implements Runnable{
 		//UI
 		ui.draw(graph2D);
 
+		for (OtherPlayer otherPlayer:allOtherPlayer) {
+			if (otherPlayer != null) {
+
+				otherPlayer.draw(graph2D);
+			}
+		}
+
 		graph2D.dispose();
+
+
 	}
 
 	public void playMusic(int i) {
